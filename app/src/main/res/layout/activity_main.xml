@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:fillViewport="true">
+
+    <!-- content -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- header -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- home team-->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <!-- stats -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/home_team_yellow_cards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/home_team_yellow_cards_counter"
+                            style="@style/card"
+                            android:text="0" />
+                        <TextView
+                            style="@style/yellowCard"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/home_team_fouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@id/home_team_yellow_cards"
+                        android:layout_toStartOf="@id/home_team_yellow_cards">
+
+                        <TextView
+                            style="@style/card"
+                            android:id="@+id/home_team_fouls_counter"
+                            android:text="0" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/home_team_yellow_cards"
+                        android:id="@+id/home_team_red_cards"
+                        android:layout_toEndOf="@id/home_team_yellow_cards"                    >
+
+                        <TextView
+                            style="@style/card"
+                            android:id="@+id/home_team_red_cards_counter"
+                            android:text="0" />
+                        <TextView
+                            style="@style/redCard"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- end stats -->
+
+            </LinearLayout>
+
+            <!-- away team -->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <!-- stats -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/away_team_yellow_cards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            style="@style/card"
+                            android:id="@+id/away_team_yellow_cards_counter"
+                            android:text="0" />
+                        <TextView
+                            style="@style/yellowCard"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/away_team_fouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@id/away_team_yellow_cards"
+                        android:layout_toStartOf="@id/away_team_yellow_cards">
+
+                        <TextView
+                            style="@style/card"
+                            android:id="@+id/away_team_fouls_counter"
+                            android:text="0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/away_team_red_cards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/away_team_yellow_cards"
+                        android:layout_toEndOf="@id/away_team_yellow_cards">
+
+                        <TextView
+                            style="@style/card"
+                            android:id="@+id/away_team_red_cards_counter"
+                            android:text="0" />
+                        <TextView
+                            style="@style/redCard"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- end stats -->
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- end header -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                style="@style/team"
+                android:layout_centerInParent="true"
+                android:src="@drawable/fcb"
+                android:paddingTop="30dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp" />
+            <ImageView
+                style="@style/team"
+                android:layout_centerInParent="true"
+                android:src="@drawable/rm"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/home_team_score"
+                style="@style/score"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/away_team_score"
+                style="@style/score"
+                android:text="0" />
+
+            <!-- end away score -->
+        </LinearLayout>
+
+        <!-- buttons -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_home_team_goals"
+                android:onClick="increaseHomeTeamGoals"
+                android:text="+"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_home_team_goals"
+                android:onClick="decreaseHomeTeamGoals"
+                android:text="-"/>
+            <TextView
+                style="@style/labelButton"
+                android:text="@string/goal"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_away_team_goals"
+                android:onClick="decreaseAwayTeamGoals"
+                android:text="-"/>
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_away_team_goals"
+                android:onClick="increaseAwayTeamGoals"
+                android:text="+"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_home_team_fouls"
+                android:onClick="increaseHomeTeamFouls"
+                android:text="+"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_home_team_fouls"
+                android:onClick="decreaseHomeTeamFouls"
+                android:text="-"/>
+
+            <TextView
+                style="@style/labelButton"
+                android:text="@string/foul"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_away_team_fouls"
+                android:onClick="increaseAwayTeamFouls"
+                android:text="-"/>
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_away_team_fouls"
+                android:onClick="decreaseAwayTeamFouls"
+                android:text="+"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_home_team_yellow_cards"
+                android:onClick="increaseHomeTeamYellowCards"
+                android:text="+"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_home_team_yellow_cards"
+                android:onClick="decreaseHomeTeamYellowCards"
+                android:text="-"/>
+            <RelativeLayout
+                style="@style/cardLabel">
+
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/yellow_card"/>
+            </RelativeLayout>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_away_team_yellow_cards"
+                android:onClick="increaseAwayTeamYellowCards"
+                android:text="-"/>
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_away_team_yellow_cards"
+                android:onClick="decreaseAwayTeamYellowCards"
+                android:text="+"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_home_team_red_cards"
+                android:onClick="increaseHomeTeamRedCards"
+                android:text="+"/>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_home_team_red_cards"
+                android:onClick="decreaseHomeTeamRedCards"
+                android:text="-"/>
+            <RelativeLayout
+                style="@style/cardLabel">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/red_card"/>
+            </RelativeLayout>
+            <Button
+                style="@style/minusButton"
+                android:id="@+id/decrease_away_team_red_cards"
+                android:onClick="increaseAwayTeamRedCards"
+                android:text="-"/>
+            <Button
+                style="@style/plusButton"
+                android:id="@+id/increase_away_team_red_cards"
+                android:onClick="decreaseAwayTeamRedCards"
+                android:text="+"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/reset"
+            android:textColor="#ffffff"
+            android:text="@string/reset"
+            android:onClick="resetData"/>
+
+        <!-- end buttons -->
+
+    </LinearLayout>
+
+    <!-- end content -->
+
+</ScrollView>
